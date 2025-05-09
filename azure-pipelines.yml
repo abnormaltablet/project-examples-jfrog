@@ -40,7 +40,7 @@ steps:
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     javaHomeOption: 'Path'
-    jdkDirectory: '/usr/lib/jvm/java-11-openjdk-amd64' #'/usr/lib/jvm/zulu-7-amd64'
+    jdkDirectory: '/usr/lib/jvm/zulu-7-amd64' #'/usr/lib/jvm/java-11-openjdk-amd64' #
 
 # trigger:
 # - master
