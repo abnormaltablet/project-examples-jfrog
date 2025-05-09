@@ -25,6 +25,19 @@ steps:
 #     jdkArchitectureOption: 'x64'
 #     publishJUnitResults: true
 #     testResultsFiles: '**/surefire-reports/TEST-*.xml'
+- task: ArtifactoryMaven@2
+  inputs:
+    mavenPomFile: 'maven-examples/maven-example/pom.xml'
+    goals: 'clean install'
+    artifactoryResolverService: 'art-2'
+    targetResolveReleaseRepo: 'anjalis-libs-release'
+    targetResolveSnapshotRepo: 'anjalis-libs-snapshot'
+    artifactoryDeployService: 'art-2'
+    targetDeployReleaseRepo: 'anjalis-libs-release-local'
+    targetDeploySnapshotRepo: 'anjalis-libs-snapshot-local'
+    collectBuildInfo: true
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
 #     goals: 'package'
 - task: JFrogMaven@1
   inputs:
