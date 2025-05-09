@@ -29,7 +29,7 @@ steps:
 - task: JFrogMaven@1
   inputs:
     mavenPomFile: 'maven-examples/maven-example/pom.xml'
-    goals: 'clean deploy'
+    goals: 'clean install'
     artifactoryResolverService: 'rep-azure-anjali'
     targetResolveReleaseRepo: 'anjalis-libs-release'
     targetResolveSnapshotRepo: 'anjalis-libs-snapshot'
